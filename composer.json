@@ -1,6 +1,8 @@
 {
     "name": "cangelis/l4pdf",
-    "description": "",
+    "description": "Yet another HTML to PDF Converter for Laravel4",
+    "keywords": ["pdf","pdf converter", "laravel4", "html to pdf", "wkhtmltopdf"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Can Geliş",
