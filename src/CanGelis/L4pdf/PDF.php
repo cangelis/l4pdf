@@ -64,7 +64,7 @@ class PDF {
 		'footer-font-size', 'footer-html', 'footer-left', 'footer-line',
 		'footer-right', 'footer-spacing', 'header-center', 'header-font-name',
 		'header-font-size', 'header-html', 'header-left', 'header-line', 'header-right',
-		'print-media-type'
+		'header-spacing', 'print-media-type', 'zoom'
 	);
 
 	/**
