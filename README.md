@@ -36,17 +36,17 @@ Run this command to publish the configurations of this package
 
 Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis/l4pdf/config.php`
 
-    `'executable' => '/usr/bin/wkhtmltopdf'`
+    'executable' => '/usr/bin/wkhtmltopdf'
 
 ## Some examples
 
     PDF::loadView('pdf/invoice')->download('invoice.pdf');
 
-
     PDF::loadURL('http://www.laravel.com')->grayscale()->pageSize('A3')->orientation('Landscape')->stream('laravel.pdf')
 
-
-    PDF::loadHTML('<strong>Hello World</strong>')->lowQuality()->pageSize('A2')->download();
+    Route::get('/', function() {
+        return PDF::loadHTML('<strong>Hello World</strong>')->lowQuality()->pageSize('A2')->download();
+    });
 
 ## Documentation
 
