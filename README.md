@@ -50,7 +50,7 @@ Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis
 
 ## Documentation
 
-You can see all the available methods in the full [documentation](https://www.github.com/cangelis/l4pdf/DOCUMENTATION.md) file
+You can see all the available methods in the full [documentation](https://github.com/cangelis/l4pdf/blob/master/DOCUMENTATION.md) file
 
 ## Contribution
 
