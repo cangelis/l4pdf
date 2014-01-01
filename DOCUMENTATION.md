@@ -43,3 +43,5 @@ Method | Description
 `headerSpacing('10mm')` | Spacing between header and content in mm (default 0)
 `printMediaType()` | Use print media-type instead of screen
 `zoom(0.5)` | Use the zoom factor (default 1)
+`download('filename')` | Serve the document as an attachment
+`stream('filename')` | Display the document in the browser window
