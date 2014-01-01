@@ -160,7 +160,7 @@ class PDF {
 				$result .= '--' . $value;
 			} else
 			{
-				$result .= '--' . $key . ' ' . $value;
+				$result .= '--' . $key . ' ' . '"' . $value . '"';
 			}
 			$result .= ' ';
 		}
