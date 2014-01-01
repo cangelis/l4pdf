@@ -4,6 +4,9 @@
 
 Method | Description
 ------ | -----------
+`loadView('view')` | PDF will be generated using the Laravel view
+`loadUrl('http://www.laravel.com')` | PDF will be generated using the remote url
+`loadHTML('<strong>Hello World</strong>')` | PDF will be generated using the plain HTML String
 `grayscale()` | PDF will be generated in grayscale
 `orientation('Landscape')` | Set orientation to Landscape or Portrait (default Portrait)
 `pageSize('A4')` | Set paper size to: A4, Letter, etc. (default A4)
