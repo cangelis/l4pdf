@@ -1,6 +1,6 @@
 # HTML to PDF Converter for Laravel 4
 
-This is a yet another html to pdf converter for Laravel 4. This package uses [wkhtmltopdf](https://github.com/antialize/wkhtmltopdf) as a third-party tool so `exec()` function has to be enabled in your php configurations and `wkhtmltopdf` tool should be installed in your machine.
+This is a yet another html to pdf converter for Laravel 4. This package uses [wkhtmltopdf](https://github.com/antialize/wkhtmltopdf) as a third-party tool so `exec()` function has to be enabled in your php configurations and `wkhtmltopdf` tool should be installed in your machine (You can download it from [here](https://code.google.com/p/wkhtmltopdf/downloads/list)).
 
 ## Installation
 
