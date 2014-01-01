@@ -40,7 +40,7 @@ Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis
 
 ## Some examples
 
-    PDF::loadView('pdf/invoice')->download('invoice.pdf');
+    PDF::loadView('pdf.invoice')->download('invoice.pdf');
 
     PDF::loadURL('http://www.laravel.com')->grayscale()->pageSize('A3')->orientation('Landscape')->stream('laravel.pdf')
 
