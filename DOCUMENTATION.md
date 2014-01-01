@@ -10,7 +10,7 @@ Method | Description
 `grayscale()` | PDF will be generated in grayscale
 `orientation('Landscape')` | Set orientation to Landscape or Portrait (default Portrait)
 `pageSize('A4')` | Set paper size to: A4, Letter, etc. (default A4)
-`lowQuality()` | Generates lower quality pdf/ps. Useful to shrink the result document space
+`lowquality()` | Generates lower quality pdf/ps. Useful to shrink the result document space
 `dpi(96)` | Change the dpi explicitly (this has no effect on X11 based systems)
 `imageDpi(600)` | When embedding images scale them down to this dpi (default 600)
 `imageQuality(94)` | When jpeg compressing images use this quality (default 94)
