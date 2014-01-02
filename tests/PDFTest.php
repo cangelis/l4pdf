@@ -24,14 +24,14 @@ class PDFTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp()
 	{
-		$this->pdf = new \CanGelis\L4pdf\PDF();
+		$this->pdf = new \CanGelis\L4pdf\PDF('echo', sys_get_temp_dir());
 	}
 
 	public function testGetParamsReturnsParameterNamesCorrectly()
 	{
-		$this->call('addParam',array('foo'));
-		$this->call('addParam',array('bar', 'baz'));
-		$this->call('addParam',array('bazzer'));
+		$this->call('addParam', array('foo'));
+		$this->call('addParam', array('bar', 'baz'));
+		$this->call('addParam', array('bazzer'));
 		$this->assertEquals('--foo --bar "baz" --bazzer ', $this->call('getParams'));
 	}
 
@@ -52,5 +52,6 @@ class PDFTest extends PHPUnit_Framework_TestCase {
 		$this->pdf->loadHTML('<b>foo bar</b>');
 		$this->assertContains('.html', $this->call('getInputSource'));
 	}
+
 
 }

@@ -1,6 +1,7 @@
 <?php namespace CanGelis\L4pdf;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Config;
 
 class ServiceProvider extends IlluminateServiceProvider {
 
@@ -30,7 +31,7 @@ class ServiceProvider extends IlluminateServiceProvider {
 	{
 		$this->app['pdf'] = $this->app->share(function($app)
 		{
-			return new PDF;
+			return new PDF(Config::get('l4pdf::executable'), storage_path());
 		});
 	}
 

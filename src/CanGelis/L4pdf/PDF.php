@@ -67,13 +67,22 @@ class PDF {
 	);
 
 	/**
+	 * wkhtmltopdf executable path
+	 *
+	 * @var string
+	 */
+	protected $cmd;
+
+	/**
 	 * Initialize temporary file names and folders
 	 */
-	public function __construct()
+	public function __construct($cmd ,$tmpFolder)
 	{
+		$this->cmd = $cmd;
+
 		$this->fileName = uniqid(rand(0, 99999));
 
-		$this->folder = storage_path();
+		$this->folder = $tmpFolder;
 	}
 
 	/**
@@ -220,7 +229,7 @@ class PDF {
 	 */
 	protected function generatePDF()
 	{
-		exec(Config::get('l4pdf::executable') . ' ' . $this->getParams() . ' ' . $this->getInputSource() . ' ' . $this->getPDFPath(), $output, $return_var);
+		$return_var = $this->executeCommand($output);
 
 		if ($return_var == 0)
 		{
@@ -232,6 +241,20 @@ class PDF {
 
 		$this->removeTmpFiles();
 
+	}
+
+	/**
+	 * Execute wkhtmltopdf command
+	 *
+	 * @param array &$output
+	 *
+	 * @return integer
+	 */
+	protected function executeCommand(&$output)
+	{
+		exec($this->cmd . ' ' . $this->getParams() . ' ' . $this->getInputSource() . ' ' . $this->getPDFPath(), $output, $return_var);
+
+		return $return_var;
 	}
 
 	/**
