@@ -1,5 +1,4 @@
-<?php
-namespace CanGelis\L4pdf;
+<?php namespace CanGelis\L4pdf;
 
 use Config;
 use Response;
