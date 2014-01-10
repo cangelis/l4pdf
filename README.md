@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/cangelis/l4pdf.png?branch=master)](https://travis-ci.org/cangelis/l4pdf)
 
-This is a yet another html to pdf converter for Laravel 4. This package uses [wkhtmltopdf](https://github.com/antialize/wkhtmltopdf) as a third-party tool so `exec()` function has to be enabled in your php configurations and `wkhtmltopdf` tool should be installed in your machine (You can download it from [here](https://code.google.com/p/wkhtmltopdf/downloads/list)).
+This is a yet another html to pdf converter for Laravel 4. This package uses [wkhtmltopdf](https://github.com/antialize/wkhtmltopdf) as a third-party tool so `proc_*()` functions has to be enabled in your php configurations and `wkhtmltopdf` tool should be installed in your machine (You can download it from [here](https://code.google.com/p/wkhtmltopdf/downloads/list)).
 
 **If you are not a Laravel user, check out [here](https://github.com/cangelis/php-pdf)**
 
@@ -14,7 +14,7 @@ Add this to your `composer.json`
 
     {
         "require": {
-            "cangelis/l4pdf": "1.0.*"
+            "cangelis/l4pdf": "1.1.*"
         }
     }
 
