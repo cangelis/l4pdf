@@ -49,7 +49,7 @@ Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis
     PDF::loadURL('http://www.laravel.com')->grayscale()->pageSize('A3')->orientation('Landscape')->stream('laravel.pdf')
 
     Route::get('/', function() {
-        return PDF::loadHTML('<strong>Hello World</strong>')->lowQuality()->pageSize('A2')->download();
+        return PDF::loadHTML('<strong>Hello World</strong>')->lowquality()->pageSize('A2')->download();
     });
 
 ## Documentation
