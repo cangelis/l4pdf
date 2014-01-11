@@ -2,6 +2,7 @@
 
 use Response;
 use View;
+use File;
 
 class PDF extends \CanGelis\PDF\PDF {
 
