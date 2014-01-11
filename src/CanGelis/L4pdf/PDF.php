@@ -17,7 +17,7 @@ class PDF extends \CanGelis\PDF\PDF {
 	 */
 	public function loadView($viewName, $data = array(), $mergeData = array())
 	{
-		$this->htmlContent = View::make($viewName, $data, $mergeData);
+		$this->htmlContent .= View::make($viewName, $data, $mergeData);
 
 		return $this;
 	}
