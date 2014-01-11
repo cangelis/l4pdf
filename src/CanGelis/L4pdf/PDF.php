@@ -2,6 +2,7 @@
 
 use Response;
 use View;
+use File;
 
 class PDF extends \CanGelis\PDF\PDF {
 
@@ -43,6 +44,18 @@ class PDF extends \CanGelis\PDF\PDF {
 	public function stream($as = null)
 	{
 		return $this->createResponse()->header('Content-Disposition', 'inline; ' . $this->getAs($as));
+	}
+
+	/**
+	 * Save the PDF Document to a specified location
+	 *
+	 * @param string $path
+	 *
+	 * @return boolean
+	 */
+	public function save($path)
+	{
+		return File::put($path, $this->generatePDF());
 	}
 
 	/**
