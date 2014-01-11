@@ -46,6 +46,18 @@ class PDF extends \CanGelis\PDF\PDF {
 	}
 
 	/**
+	 * Save the PDF Document to a specified location
+	 *
+	 * @param string $path
+	 *
+	 * @return boolean
+	 */
+	public function save($path)
+	{
+		return File::put($path, $this->generatePDF());
+	}
+
+	/**
 	 * Creates a response object with proper Content-type for PDF Doc.
 	 *
 	 * @return \Illuminate\Http\Response

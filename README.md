@@ -52,6 +52,13 @@ Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis
         return PDF::loadHTML('<strong>Hello World</strong>')->lowquality()->pageSize('A2')->download();
     });
 
+    try {
+        PDF::loadView('pdf.letter')->save(public_path().'/letters/letter.pdf');
+    }
+    catch (Exception $e) {
+        echo "problem saving letter\n";
+    }
+
 ## Documentation
 
 You can see all the available methods in the full [documentation](https://github.com/cangelis/l4pdf/blob/master/DOCUMENTATION.md) file
