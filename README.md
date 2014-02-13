@@ -14,7 +14,7 @@ Add this to your `composer.json`
 
     {
         "require": {
-            "cangelis/l4pdf": "1.1.*"
+            "cangelis/l4pdf": "1.2.*"
         }
     }
 
