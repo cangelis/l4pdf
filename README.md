@@ -52,12 +52,58 @@ Configure your `wkhtmltopdf` executable path under `app/config/packages/cangelis
         return PDF::loadHTML('<strong>Hello World</strong>')->lowquality()->pageSize('A2')->download();
     });
 
-    try {
-        PDF::loadView('pdf.letter')->save(public_path().'/letters/letter.pdf');
-    }
-    catch (Exception $e) {
-        echo "problem saving letter\n";
-    }
+## Saving the PDF
+
+l4pdf uses [League\Flysystem](https://github.com/thephpleague/flysystem) to save the file to the local or remote filesystems.
+
+### Usage
+
+    $pdfObject->save(string $filename, League\Flysystem\AdapterInterface $adapter, $overwrite)
+
+`filename`: the name of the file you want to save with
+
+`adapter`: FlySystem Adapter
+
+`overwrite`: If set to `true` and the file exists it will be overwritten, otherwise an Exception will be thrown.
+
+### Examples
+
+    // Save the pdf to the local file system
+    PDF::loadHTML('<b>Hello World</b>')
+        ->save("invoice.pdf", new League\Flysystem\Adapter\Local(__DIR__.'/path/to/root'));
+
+    // Save to AWS S3
+    $client = S3Client::factory([
+        'key'    => '[your key]',
+        'secret' => '[your secret]',
+    ]);
+    PDF::loadHTML('<b>Hello World</b>')
+        ->save("invoice.pdf", new League\Flysystem\Adapter\AwsS3($client, 'bucket-name', 'optional-prefix'));
+
+    // Save to FTP
+    $ftpConf = [
+        'host' => 'ftp.example.com',
+        'username' => 'username',
+        'password' => 'password',
+
+        /** optional config settings */
+        'port' => 21,
+        'root' => '/path/to/root',
+        'passive' => true,
+        'ssl' => true,
+        'timeout' => 30,
+    ];
+    PDF::loadHTML('<b>Hello World</b>')
+        ->save("invoice.pdf", new League\Flysystem\Adapter\Ftp($ftpConf));
+
+    // Save to the multiple locations and stream it
+    return PDF::loadHTML('<b>Hello World</b>')
+            ->save("invoice.pdf", new League\Flysystem\Adapter\Ftp($ftpConf))
+            ->save("invoice.pdf", new League\Flysystem\Adapter\AwsS3($client, 'bucket-name', 'optional-prefix'))
+            ->save("invoice.pdf", new League\Flysystem\Adapter\Local(__DIR__.'/path/to/root'))
+            ->download();
+
+Please see all the available adapters on the [League\Flysystem](https://github.com/thephpleague/flysystem)'s documentation
 
 ## Documentation
 

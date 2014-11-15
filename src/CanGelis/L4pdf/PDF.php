@@ -53,7 +53,7 @@ class PDF extends \CanGelis\PDF\PDF {
 	 */
 	protected function createResponse()
 	{
-		return Response::make($this->generatePDF(), 200)->header('Content-type', 'application/pdf');
+		return Response::make($this->get(), 200)->header('Content-type', 'application/pdf');
 	}
 
 	/**

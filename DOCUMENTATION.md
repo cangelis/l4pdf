@@ -49,4 +49,4 @@ Method | Description
 `zoom(0.5)` | Use the zoom factor (default 1)
 `download('filename')` | Serve the document as an attachment
 `stream('filename')` | Display the document in the browser window
-`save('path/to/file.pdf')` | Save the document to the specified location
+`save($fileName, League\Flysystem\AdapterInterface $adapter, $overwrite)` | Saves the PDF content to the specified location
